@@ -1,0 +1,340 @@
+---
+include:
+  - docassemble.AssemblyLine:assembly_line.yml
+---
+metadata:
+  title: >-
+    Lt3grievancesampleappealletterdhcd
+  short title: >-
+    Lt3grievancesampleappeall
+  description: |-
+    This interview helps someone in Massachusetts write a Grievance appeal to the Department of Housing and Community Development (DHCD).
+  can_I_use_this_form: |
+    If you are a tenant in public housing that received a response to your grievance complaint that you disagree with, you can use this interview to file an appeal.
+  before_you_start: |
+    This interview will help you write a Grievance appeal to the Department of Housing and Community Development (DHCD).
+    
+    Before you get started, please gather:
+    
+    1. Your grievance complaint.
+    2. The grievance decision.
+    3. The reasons for your appeal.
+    4. The action you want DHCD to take.
+    
+    When you are finished, you will need to:
+    
+    1. Download, print, and sign the document.
+    2. Attach your grievance decision and complaint.
+    3. Deliver or mail the document with the attachment to the Massachusetts Department of Housing and Community Development.
+  maturity: production
+  estimated_completion_minutes: 60
+  estimated_completion_delta: 30
+  LIST_topics: 
+    - "HO-00-00-00-00"
+    - "HO-01-00-00-00"
+    - "HO-02-00-00-00"
+    - "HO-03-00-00-00"
+    - "HO-05-00-00-00"
+    - "HO-06-00-00-00"
+  tags:
+    - "HO-00-00-00-00"
+    - "HO-01-00-00-00"
+    - "HO-02-00-00-00"
+    - "HO-03-00-00-00"
+    - "HO-05-00-00-00"
+    - "HO-06-00-00-00"
+  authors:
+    - Jack Brandt
+  original_form: []
+  original_form_published_on: ""
+  help_page_url: >-
+    https://www.masslegalhelp.org/housing-apartments-shelter/public-subsidized-housing/sample-letters-forms-and-worksheets
+  help_page_title: >-
+    MassLegalHelp
+  allowed_courts: []
+  typical_role: "plaintiff"
+  al_weaver_version: "1.10.3"
+  generated_on: "2024-09-12"
+  languages:
+    - en
+  jurisdiction: NAM-US-US+MA
+  review_date: 2024-09-12
+  form_titles:
+    - Lt3grievancesampleappealletterdhcd
+  form_numbers: []
+  update_notes: |
+---
+code: |
+  # This controls the default country and list of states in address field questions
+  AL_DEFAULT_COUNTRY = "US"
+---
+code: |
+  # This controls the default state in address field questions
+  AL_DEFAULT_STATE = "MA"
+---
+code: |
+  github_repo_name =  'docassemble-Lt3Grievancesampleappealletterdhcd'
+---
+code: |
+  interview_short_title = "Write a Grievance Appeal to the Department of Housing and Community Development (DHCD)"
+---
+code: |
+  al_form_type = "letter" 
+---
+objects:
+  - users: ALPeopleList.using(there_are_any=True)
+---
+sections:
+  - review_lt3grievancesampleappealletterdhcd: Review your answers
+---
+#################### Interview order #####################
+comment: |
+  Controls order and branching logic for questions specific to this form
+id: interview_order_lt3grievancesampleappealletterdhcd
+code: |
+  # Set the allowed courts for this interview
+  nav.set_section("review_lt3grievancesampleappealletterdhcd")
+  user_role = "plaintiff"
+  user_ask_role = "plaintiff"
+  Write_an_Appeal_to_the_Department_of_Housing_and_Community_Development
+  users.gather()
+  set_parts(subtitle=str(users))
+  signature_date
+  set_progress(20)
+  users[0].address.address
+  grievance_decision_date
+  grievance_decision
+  set_progress(40)
+  appeal_reasons
+  action_requested
+  interview_order_lt3grievancesampleappealletterdhcd = True
+---
+###################### Main order ######################
+comment: |
+  This block includes the logic for standalone interviews.
+  Delete mandatory: True to include in another interview
+mandatory: True
+code: |
+  al_intro_screen
+  lt3grievancesampleappealletterdhcd_intro
+  interview_order_lt3grievancesampleappealletterdhcd
+  signature_date
+  # Store anonymous data for analytics / statistics
+  store_variables_snapshot(
+      persistent=True,
+      data={
+          "zip": showifdef("users[0].address.zip"),
+          "reached_interview_end": True,
+      },
+  )
+  lt3grievancesampleappealletterdhcd_download
+---
+id: Lt3grievancesampleappealletterdhcd
+continue button field: lt3grievancesampleappealletterdhcd_intro
+question: |
+  Lt3grievancesampleappealletterdhcd
+subquestion: |
+  This interview will help you write a Grievance appeal to the Department of Housing and Community Development (DHCD).
+  
+  Before you get started, please gather:
+  
+  1. Your grievance complaint.
+  2. The grievance decision.
+  3. The reasons for your appeal.
+  4. The action you want DHCD to take.
+  
+  When you are finished, you will need to:
+  
+  1. Download, print, and sign the document.
+  2. Attach your grievance decision and complaint.
+  3. Deliver or mail the document with the attachment to the Massachusetts Department of Housing and Community Development.
+
+  If you are a tenant in public housing that received a response to your grievance complaint that you disagree with, you can use this interview to file an appeal.
+
+  Most people take about 15 minutes to complete this interview.
+---
+id: Write an Appeal to the Department of Housing and Community Development
+question: |
+  Write an Appeal to the Department of Housing and Community Development
+subquestion: |
+  Only use this form if you are in STATE PUBLIC HOUSING! If you are in Federal housing, you will have to fill out a different form.
+  
+  State regulations provide that either you or the housing authority have the right to ask the housing authority’s Board of Commissioners to review a grievance decision in most cases.91 This is called an appeal. The only time that you cannot appeal a grievance hearing is if a hearing officer or panel approved the termination of your lease. You do not have to move, however, until a court orders you to. Go to MassLegalHelp.org for more information on evictions. (Note: The Boston Housing Authority does not have a Board of Commissioners, so grievance appeals go to the administrator or the person she chooses.)
+  
+  To file an appeal, a tenant or housing authority must submit a written letter to the housing authority’s Board of Commissioners (or for the Boston Housing Authority, the appropriate administrator) within 14 days of mailing or other delivery of the hearing officer’s or panel’s decision. An appeal can be sought if you or the housing authority believe that the decision was not supported by the facts or did not correctly apply applicable laws, regulations, rules, or policies, or that the matter was not something subject to the grievance procedure.
+continue button field: Write_an_Appeal_to_the_Department_of_Housing_and_Community_Development
+---
+id: General Information
+question: |
+  General Information
+fields:
+  - "Date of Grievance decision": grievance_decision_date
+    datatype: date
+  - "Housing authority": housing_authority
+  - "Secretary dhcd": secretary_dhcd
+---
+id: Grievance Decision
+question: |
+  Grievance Decision
+subquestion: |
+  Type the grievance decision from the document your housing authority sent you.
+fields:
+  - "Grievance decision": grievance_decision
+---
+id: Why are you Appealing
+question: |
+  Why are you Appealing?
+subquestion: |
+  An appeal can be sought if you or the housing authority believe that the decision was not supported by the facts or did not correctly apply applicable laws, regulations, rules, or policies, or that the matter was not something subject to the grievance procedure.
+  
+  Copy one of the examples below, or write your own reason for appeal.
+  
+  EXAMPLES:
+  
+  -I believe the facts presented at the hearing do not support this decision.
+  
+  -I believe that the hearing officer or panel did not correctly apply the law, regulations, or relevant policies.
+  
+  -I believe that this matter was not something that should have been subjected to a grievance.
+fields:
+  - "Appeal reasons": appeal_reasons
+---
+id: What do you want the DHCD to do
+question: |
+  What do you want the DHCD to do?
+subquestion: |
+  Write whether you to want the DHCD to uphold, set aside, or modify the grievance.
+fields:
+  - "Action requested": action_requested
+---
+id: preview lt3grievancesampleappealletterdhcd
+question: |
+  Preview your form before you sign it
+subquestion: |
+  Here is a preview of the form you will sign on the next page.   
+  
+  ${ al_recipient_bundle.as_pdf(key='preview') }
+
+  Click the image to open it in a new tab. Click the "Edit answers" button
+  to edit your answers.
+
+  ${ action_button_html(url_action('review_lt3grievancesampleappealletterdhcd'), label='Edit answers', color='info') }
+  
+  Remember to come back to this window to continue and sign your form.
+continue button field: lt3grievancesampleappealletterdhcd_preview_question    
+---
+code: |
+  signature_fields = []
+---
+id: lt3grievancesampleappealletterdhcd review screen
+event: review_lt3grievancesampleappealletterdhcd
+question: |
+  Review your answers
+review:
+  - Edit: grievance_decision
+    button: |
+      **Grievance decision**:
+      ${ grievance_decision }
+  - Edit: grievance_decision_date
+    button: |
+      **Date of Grievance decision**:
+      ${ grievance_decision_date }
+  - Edit: users.revisit
+    button: |
+      **Users**
+
+      % for item in users:
+        * ${ item }
+      % endfor
+  - Edit: action_requested
+    button: |
+      **Action requested**:
+      ${ action_requested }
+  - Edit: housing_authority
+    button: |
+      **Housing authority**:
+      ${ housing_authority }
+  - Edit: appeal_reasons
+    button: |
+      **Appeal reasons**:
+      ${ appeal_reasons }
+  - Edit: signature_date
+    button: |
+      **Date of Signature**:
+      ${ signature_date }
+  - Edit: secretary_dhcd
+    button: |
+      **Secretary dhcd**:
+      ${ secretary_dhcd }
+---
+continue button field: users.revisit
+question: |
+  Edit users
+subquestion: |
+  ${ users.table }
+
+  ${ users.add_action() }
+---
+table: users.table
+rows: users
+columns:
+  - Address: |
+      row_item.address.block() if defined("row_item.address.address") else ""
+  - Name: |
+      row_item.name.full() if defined("row_item.name.first") else ""
+edit:
+  - address.address
+  - name.first
+confirm: True
+
+---
+id: download lt3grievancesampleappealletterdhcd
+event: lt3grievancesampleappealletterdhcd_download
+question: |
+  All done
+subquestion: |
+  Thank you ${users}. Your form is ready to download and deliver.
+  
+  View, download and send your form below. Click the "Edit answers" button to fix any mistakes.
+
+  ${ action_button_html(url_action('review_lt3grievancesampleappealletterdhcd'), label='Edit answers', color='info') }
+  
+  
+  ${ al_user_bundle.download_list_html() }
+  
+
+  ${ al_user_bundle.send_button_html(show_editable_checkbox=True) }
+
+progress: 100
+---
+# ALDocument objects specify the metadata for each template
+objects:
+  - lt3grievancesampleappealletterdhcd_Post_interview_instructions: ALDocument.using(title="Instructions", filename="lt3grievancesampleappealletterdhcd_next_steps.docx", enabled=True, has_addendum=False)
+  - lt3grievancesampleappealletterdhcd_attachment: ALDocument.using(title="Lt3grievancesampleappealletterdhcd", filename="lt3grievancesampleappealletterdhcd", enabled=True, has_addendum=False, )
+---
+# Bundles group the ALDocuments into separate downloads, such as for court and for the user
+objects:
+  - al_user_bundle: ALDocumentBundle.using(elements=[lt3grievancesampleappealletterdhcd_Post_interview_instructions, lt3grievancesampleappealletterdhcd_attachment], filename="lt3grievancesampleappealletterdhcd", title="All forms to download for your records", enabled=True)
+  - al_recipient_bundle: ALDocumentBundle.using(elements=[lt3grievancesampleappealletterdhcd_attachment],  filename="lt3grievancesampleappealletterdhcd", title="All forms to file", enabled=True)
+---
+# Each attachment defines a key in an ALDocument. We use `i` as the placeholder here so the same template is 
+# used for "preview" and "final" keys, and logic in the template checks the value of 
+# `i` to show or hide the user's signature
+attachment:
+  name: Post-interview-Instructions
+  filename: lt3grievancesampleappealletterdhcd_next_steps
+  docx template file: lt3grievancesampleappealletterdhcd_next_steps.docx
+  variable name: lt3grievancesampleappealletterdhcd_Post_interview_instructions[i]
+  skip undefined: True
+  tagged pdf: True
+---
+attachment:
+  name: lt3grievancesampleappealletterdhcd
+  filename: lt3grievancesampleappealletterdhcd
+  variable name: lt3grievancesampleappealletterdhcd_attachment[i]
+  skip undefined: True
+  docx template file: lt3grievancesampleappealletterdhcd.docx
+  tagged pdf: True
+
+
+
