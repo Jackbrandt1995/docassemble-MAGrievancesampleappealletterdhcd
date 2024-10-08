@@ -149,47 +149,52 @@ subquestion: |
   2. Attach your grievance decision and complaint.
   3. Deliver or mail the document with the attachment to the Massachusetts Department of Housing and Community Development.
 
-  If you are a tenant in public housing that received a response to your grievance complaint that you disagree with, you can use this interview to file an appeal.
-
   Most people take about 15 minutes to complete this interview.
 ---
 id: Write an Appeal to the Department of Housing and Community Development
 question: |
   Write an Appeal to the Department of Housing and Community Development
 subquestion: |
-  Only use this form if you are in STATE PUBLIC HOUSING! If you are in Federal housing, you will have to fill out a different form to appeal to the housing authority board.
+  If any of the items below **do not** describe you, then this is the wrong form for you. 
   
-  State regulations provide that either you or the housing authority have the right to ask the housing authority’s Board of Commissioners to review a grievance decision in most cases. This is called an appeal. The only time that you cannot appeal a grievance hearing is if a hearing officer or panel approved the termination of your lease. You do not have to move, however, until a court orders you to. Go to MassLegalHelp.org for more information on evictions. (Note: The Boston Housing Authority does not have a Board of Commissioners, so grievance appeals go to the administrator or the person she chooses.)
+  - I am in state public housing.
+
+  - I filed a grievance.
+
+  - I received a decision from the housing authority board.
+
+  - I received this decision *LESS THAN* 14 days ago.
+
+  - A hearing officer or panel did *NOT* terminate my lease.
+
+  - A court has *NOT* ordered me to move.
   
-  To file an appeal, a tenant or housing authority must submit a written letter to the housing authority’s Board of Commissioners (or for the Boston Housing Authority, the appropriate administrator) within 14 days of mailing or other delivery of the hearing officer’s or panel’s decision. An appeal can be sought if you or the housing authority believe that the decision was not supported by the facts or did not correctly apply applicable laws, regulations, rules, or policies, or that the matter was not something subject to the grievance procedure.
+  If **ALL** of the items above are true, click "Next"
+  
 continue button field: Write_an_Appeal_to_the_Department_of_Housing_and_Community_Development
 ---
 id: General Information
 question: |
-  General Information
+  General information
 fields:
-  - "Date of Grievance decision": grievance_decision_date
+  - "Date of Grievance decision (This will be written on your grievance decision notice)": grievance_decision_date
     datatype: date
-  - "Housing authority": housing_authority
-  - "Secretary dhcd": secretary_dhcd
+  - "Who is your housing authority? (example: Boston Housing Authority)": housing_authority
 ---
 id: Grievance Decision
 question: |
-  Grievance Decision
+  Decision from housing authority
 subquestion: |
-  Type the grievance decision from the document your housing authority sent you.
+  Type the decision from the document your housing authority sent you. 
 fields:
-  - "Grievance decision": grievance_decision
+  - "What did the document say? (example: Your appeal is denied)": grievance_decision
+    datatype: area
 ---
 id: Why are you Appealing
 question: |
-  Why are you Appealing?
+  Why are you appealing?
 subquestion: |
-  An appeal can be sought if you or the housing authority believe that the decision was not supported by the facts or did not correctly apply applicable laws, regulations, rules, or policies, or that the matter was not something subject to the grievance procedure.
-  
   Copy one of the examples below, or write your own reason for appeal.
-  
-  EXAMPLES:
   
   -I believe the facts presented at the hearing do not support this decision.
   
@@ -197,15 +202,17 @@ subquestion: |
   
   -I believe that this matter was not something that should have been subjected to a grievance.
 fields:
-  - "Appeal reasons": appeal_reasons
+  - "Why are you appealing?": appeal_reasons
+    datatype: area
 ---
 id: What do you want the DHCD to do
 question: |
   What do you want the DHCD to do?
 subquestion: |
-  Write whether you to want the DHCD to uphold, set aside, or modify the grievance.
+  Say that you want the DHCD to change their decision. You can add more details if you would like.
 fields:
-  - "Action requested": action_requested
+  - "Fill in the blank: I want the DHCD to...": action_requested
+    datatype: area
 ---
 id: preview lt3grievancesampleappealletterdhcd
 question: |
