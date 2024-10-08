@@ -45,7 +45,7 @@ def find_package_data(where='.', package='', exclude=standard_exclude, exclude_d
 
 setup(name='docassemble.MAGrievancesampleappealletterdhcd',
       version='1.0',
-      description=('Appeal a decision to the MA DCHD '),
+      description=('Appeal a decision to the MA DHCD '),
       long_description='# docassemble.Lt3Grievancesampleappealletterdhcd\r\n\r\nLt3grievancesampleappealletterdhcd\r\n\r\n## Author\r\n\r\nJack Brandt\r\n\r\n',
       long_description_content_type='text/markdown',
       author='Jack Brandt',
