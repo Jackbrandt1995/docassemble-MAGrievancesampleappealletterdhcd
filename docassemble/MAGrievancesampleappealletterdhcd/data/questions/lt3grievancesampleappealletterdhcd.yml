@@ -155,7 +155,7 @@ id: Write an Appeal to the Department of Housing and Community Development
 question: |
   Write an Appeal to the Department of Housing and Community Development
 subquestion: |
-  If any of the items below **do not** describe you, then this is the wrong form for you. 
+  Read these statements before you continue:
   
   - I am in state public housing.
 
@@ -169,7 +169,7 @@ subquestion: |
 
   - A court has *NOT* ordered me to move.
   
-  If **ALL** of the items above are true, click "Next"
+  If **ALL** of the statements above are true, click "Next"
   
 continue button field: Write_an_Appeal_to_the_Department_of_Housing_and_Community_Development
 ---
